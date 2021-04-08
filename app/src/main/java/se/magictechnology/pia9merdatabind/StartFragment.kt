@@ -30,4 +30,17 @@ class StartFragment : Fragment() {
         //return inflater.inflate(R.layout.fragment_start, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        var names = mutableListOf<Person>()
+        names.add(Person("Arne", "Arnesson", true))
+        names.add(Person(firstname = "Berit", lastname = "Beritsson", isActive = true))
+        names.add(Person(firstname = "Ceasar", lastname = "Romsson", isActive = false))
+
+        startadapter.people = names
+        startadapter.notifyDataSetChanged()
+
+    }
+
 }
